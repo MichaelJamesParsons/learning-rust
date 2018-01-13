@@ -17,4 +17,41 @@ fn main () {
 
     // Pad with 0's
     println!("{ten:>0ws$}", ten=10, ws=5);
+
+    // String length
+    let my_string = "I am a random string.";
+    println!("Length: {}", my_string.len());
+
+    // String split
+    let (first, second) = my_string.split_at(6);
+    println!("First: \"{}\" Second: \"{}\".", first, second);
+
+    // Count characters
+    let count = my_string.chars().count();
+    println!("count: {}", count);
+
+    // Iterate over characters in string
+    let mut chars = my_string.chars();
+    let mut indiv_char = chars.next();
+
+    loop {
+        match indiv_char {
+            Some(x) => println!("{}", x),
+            None => break
+        }
+        indiv_char = chars.next()
+    }
+
+    // Iterate over words in string
+    let mut iter = my_string.split_whitespace();
+    let mut indiv_word = iter.next();
+
+    loop {
+        match indiv_word {
+            Some(x) => println!("{}", x),
+            None => break
+        }
+
+        indiv_word = iter.next();
+    }
 }
