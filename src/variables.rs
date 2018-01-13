@@ -1,6 +1,5 @@
 
 fn main () {
-
     // All variables are immutable by default.
     let mut immutable_var: i32 = 10;
 
